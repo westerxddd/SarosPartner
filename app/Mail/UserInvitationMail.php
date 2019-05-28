@@ -35,6 +35,7 @@ class UserInvitationMail extends Mailable
         ]);
 
         return $this
+            ->from($_ENV['MAIL_FROM'])
             ->view('mails.layout',['content'=>$content]);
     }
 }
