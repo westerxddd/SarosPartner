@@ -9,26 +9,27 @@
 @section('content')
     <div class="row">
         <div class="col-lg-3 col-xs-6">
-
-            <div class="box box-widget widget-user-2">
-                <div class="widget-user-header bg-primary">
-                    <div class="widget-user-image">
-                        <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+            @if(isset(auth()->user()->client))
+                <div class="box box-widget widget-user-2">
+                    <div class="widget-user-header bg-primary">
+                        <div class="widget-user-image">
+                            <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <!-- /.widget-user-image -->
+                        <h3 class="widget-user-username">{{auth()->user()->client->name}}</h3>
                     </div>
-                    <!-- /.widget-user-image -->
-                    <h3 class="widget-user-username">{{auth()->user()->client->name}}</h3>
-                </div>
-                <div class="box-footer no-padding">
-                    <ul class="nav nav-stacked">
-                        <li><a><strong>Email</strong> <span class="pull-right">{{auth()->user()->email}}</span></a></li>
-                        <li><a><strong>Data dołączenia</strong> <span class="pull-right">{{auth()->user()->created_at->format('d.m.Y H:i')}}</span></a></li>
-                        @if(isset(auth()->user()->client->nip))
-                            <li><a><strong>NIP</strong> <span class="pull-right">{{auth()->user()->client->nip}}</span></a></li>
-                        @endif
+                    <div class="box-footer no-padding">
+                        <ul class="nav nav-stacked">
+                            <li><a><strong>Email</strong> <span class="pull-right">{{auth()->user()->email}}</span></a></li>
+                            <li><a><strong>Data dołączenia</strong> <span class="pull-right">{{auth()->user()->created_at->format('d.m.Y H:i')}}</span></a></li>
+                            @if(isset(auth()->user()->client->nip))
+                                <li><a><strong>NIP</strong> <span class="pull-right">{{auth()->user()->client->nip}}</span></a></li>
+                            @endif
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            @endif
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
