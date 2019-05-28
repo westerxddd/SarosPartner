@@ -30,7 +30,7 @@ class UserController extends Controller
 
        Mail::to($user->email)->send(new UserInvitationMail($user));
 
-       return redirect()->back()->route('dashboard')->with('success','Zaproszenie zostało wysłane pod adres: '.$user->email.'!');
+       return redirect()->back()->with('success','Zaproszenie zostało wysłane pod adres: '.$user->email.'!');
    }
 
    public function registration($token, Request $request){
