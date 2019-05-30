@@ -66,7 +66,7 @@
                             <table class="table table-striped table-hover" id="clients-table">
                                 <thead>
                                     <tr>
-                                        <th>Lp.</th>
+                                        <th style="width: 30px;">Lp.</th>
                                         <th>Nazwa</th>
                                         <th>NIP</th>
                                         <th>Pkty</th>

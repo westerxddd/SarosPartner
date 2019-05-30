@@ -83,7 +83,7 @@
                                 <table class="table table-striped table-hover" id="articles-table">
                                     <thead>
                                     <tr>
-                                        <th>Lp.</th>
+                                        <th style="width: 30px;">Lp.</th>
                                         <th>Prefiks</th>
                                         <th>Wartość netto</th>
                                         <th>Dodano</th>
