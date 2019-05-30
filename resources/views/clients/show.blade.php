@@ -76,9 +76,10 @@
                                 <table class="table table-striped table-hover" id="articles-table">
                                     <thead>
                                     <tr>
-                                        <th>Lp.</th>
+                                        <th style="width: 25px;">Lp.</th>
                                         <th>Prefiks</th>
                                         <th>Wartość netto</th>
+                                        <th style="width: 25px;">x2</th>
                                         <th>Dodano</th>
                                     </tr>
                                     </thead>
@@ -118,6 +119,7 @@
                     { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable:false },
                     { data: 'prefix', name: 'prefix' },
                     { data: 'netto', name: 'netto' },
+                    { data: 'multiple', name: 'multiple'},
                     { data: 'created_at', name: 'created_at'}
                 ]
             });

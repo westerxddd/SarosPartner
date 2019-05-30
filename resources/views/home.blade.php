@@ -99,6 +99,10 @@
 @section('js')
     <script>
         $(document).ready(function(){
+            $(".select2").select2({
+                tags: true
+            });
+
             oTable = $('#clients-table').DataTable({
                 processing: true,
                 serverSide: true,

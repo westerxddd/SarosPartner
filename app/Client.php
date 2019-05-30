@@ -19,7 +19,7 @@ class Client extends Model
         return $this->hasOne('App\Point');
     }
 
-    public function addPoints($points){
+    public function addPoints($points, $extra = 1){
         if(count($this->points) < 1){
             $points = new Point;
 
@@ -28,7 +28,7 @@ class Client extends Model
             $points->save();
         }
 
-        $this->points->amount += $points;
+        $this->points->amount += $points * $extra;
         $this->points->save();
     }
 

@@ -9,6 +9,9 @@
     <div class="form-group">
         {{ Form::file('csv_file') }}
     </div>
+    <div class="form-group">
+        {{ Form::select('extra[]',[],[],['class'=>'form-control select2','multiple'=>'multiple']) }}
+    </div>
 </div>
 <!-- /.box-body -->
 <div class="box-footer clearfix">

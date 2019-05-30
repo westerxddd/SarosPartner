@@ -76,10 +76,17 @@ class DataController extends Controller
 
         return \Yajra\DataTables\Facades\DataTables::eloquent($articles)
             ->addIndexColumn()
+            ->editColumn('multiple',function($article){
+                if ($article->multiple){
+                    return '<i class="fa fa-star extra-points" aria-hidden="true"></i>';
+                }
+
+                return '';
+            })
             ->editColumn('created_at', function($article){
                 return $article->created_at->format('d.m.Y H:i');
             })
-//            ->rawColumns(['action'])
+            ->rawColumns(['multiple', 'DT_RowIndex'])
             ->toJson();
     }
 }

@@ -1,4 +1,4 @@
-{{ Form::open(['route' => 'import.store','files'=>true]) }}
+{{ Form::open(['route' => 'import.store','files' =>true,'enctype'=>'multipart/form-data']) }}
 <div class="box-header with-border">
     <h3 class="box-title">Import kontrahentów</h3>
 </div>
