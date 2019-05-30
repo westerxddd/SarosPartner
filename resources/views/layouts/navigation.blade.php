@@ -8,8 +8,8 @@
     <li class="{{ Request::is('new-admin') ? 'active' : '' }}">
         <a href=""><i class="fa fa-user" aria-hidden="true"></i><span>Dodaj administratora</span></a>
     </li>
-    <li class="{{ Request::is('new-promo') ? 'active' : '' }}">
-        <a href=""><i class="fa fa-star" aria-hidden="true"></i><span>Dodaj promocję</span></a>
+    <li class="{{ Request::is('deals') ? 'active' : '' }}">
+        <a href="{{route('deals')}}"><i class="fa fa-star" aria-hidden="true"></i><span>Promocje</span></a>
     </li>
     @endif
 </ul>

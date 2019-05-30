@@ -7,6 +7,7 @@
     @csrf
     {{Form::hidden('type','clients')}}
     <div class="form-group">
+        {{ Form::label('csv_file','Plik csv z kontrahentami:') }}
         {{ Form::file('csv_file') }}
     </div>
 </div>

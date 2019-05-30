@@ -6,29 +6,37 @@ use App\Client;
 use App\ClientArticles;
 use App\Point;
 use App\Import;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ArticlesForClientsImport implements ToCollection,WithHeadingRow
+class ArticlesForClientsImport implements ToCollection, WithHeadingRow
 {
+    protected $extra;
+
+    public function  __construct($extra)
+    {
+        $this->extra = isset($extra) ? $extra : [];
+    }
+
     public function collection(Collection $rows)
     {
         $import = new Import;
         $import->save();
 
-        foreach ($rows as $key => $row){
-            if(strpos(strtolower($row['kontrahent']),'ogólna suma')){
+        foreach ($rows as $key => $row) {
+            if (strpos(strtolower($row['kontrahent']), 'ogólna suma')) {
                 continue;
             }
 
-            if (strpos(strtolower($row['kontrahent']),'paragon')){
+            if (strpos(strtolower($row['kontrahent']), 'paragon')) {
                 continue;
             }
 
-            $client = Client::where('name','=',$row['kontrahent'])->first();
+            $client = Client::where('name', '=', $row['kontrahent'])->first();
 
-            if (!isset($client)){
+            if (!isset($client)) {
                 $client = new Client;
                 $client->name = $row['kontrahent'];
                 $client->import_id = $import->id;
@@ -42,15 +50,22 @@ class ArticlesForClientsImport implements ToCollection,WithHeadingRow
 
             $article = new ClientArticles;
             $article->client_id = $client->id;
-//            $article->fix = $row['fiks'];
+            //            $article->fix = $row['fiks'];
             $article->prefix = $row['prefiks'];
-            $article->netto = doubleval(str_replace(',','.',$row['wartosc_netto']));
-//            $article->index = $row['indeks'];
-//            $article->name = $row['nazwa'];
+            $article->netto = doubleval(str_replace(',', '.', $row['wartosc_netto']));
+            //            $article->index = $row['indeks'];
+            //            $article->name = $row['nazwa'];
             $article->import_id = $import->id;
+            $multiply = 1;
+
+            if (in_array(strtolower($row['prefiks']), array_map('strtolower', $this->extra))){
+                $multiply = 2;
+                $article->multiple = true;
+            }
+
             $article->save();
 
-            $article->client->addPoints($article->netto);
+            $article->client->addPoints($article->netto, $multiply);
 
         }
     }

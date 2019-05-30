@@ -19,10 +19,14 @@ Route::group([
     Route::get('/data/articles', 'DataController@clientArticles')->name('data.articles');
 
     /*** USERS ***/
-    Route::post('/users/invitation/', 'UserController@sendInvitation')->name('users.invite');
+    Route::post('/users/invitation', 'UserController@sendInvitation')->name('users.invite');
 
     /*** ADMIN ***/
-    Route::post('/admin/register/', 'AdminController@register')->name('admin.register');
+    Route::post('/admin/register', 'AdminController@register')->name('admin.register');
+
+    /*** DEALS ***/
+    Route::get('/deals','DealController@index')->name('deals');
+    Route::post('/deals/store','DealController@store')->name('deals.store');
 
 });
 
