@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Klient')
+@section('title', 'Klient - SarosPartners')
 
 @section('content')
 

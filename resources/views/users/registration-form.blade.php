@@ -1,4 +1,4 @@
-@section('title', 'AdminLTE')
+@section('title', 'Rejestracja - SarosPartners')
 
 @extends('adminlte::master')
 

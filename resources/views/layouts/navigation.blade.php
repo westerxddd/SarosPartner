@@ -28,9 +28,9 @@
 
         <li class="{{ Request::is('announcements') ? 'active' : '' }}">
             <a href="{{route('announcements')}}"><i class="fa fa-bullhorn" aria-hidden="true"></i><span>Ogłoszenia</span>
-                @if($dealsCount = \App\Announcement::getCurrentAnnouncementsCount())
+                @if($announcementsCount = \App\Announcement::getCurrentAnnouncementsCount())
                     <span class="pull-right-container">
-                      <small class="label pull-right bg-red">{{$dealsCount}}</small>
+                      <small class="label pull-right bg-red">{{$announcementsCount}}</small>
                     </span>
                 @endif
             </a>

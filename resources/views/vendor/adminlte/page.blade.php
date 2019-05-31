@@ -56,6 +56,25 @@
                 <div class="navbar-custom-menu">
 
                     <ul class="nav navbar-nav">
+                        @if($dealsCount = \App\Deal::getCurrentDealsCount())
+                            <li class="deals-li">
+                                <a href="{{route('deals')}}"><i class="fa fa-star" aria-hidden="true"></i>
+                                    <span class="pull-right-container">
+                                        <small class="label bg-red">{{$dealsCount}}</small>
+                                    </span>
+                                </a>
+                            </li>
+                        @endif
+                        @if($announcementsCount = \App\Announcement::getCurrentAnnouncementsCount())
+                            <li class="announcements-li">
+                                <a href="{{route('announcements')}}">
+                                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                    <span class="pull-right-container">
+                                        <small class="label bg-red">{{$announcementsCount}}</small>
+                                    </span>
+                                </a>
+                            </li>
+                        @endif
                         <li class="user-li">
                             {{auth()->user()->name}}
                         </li>

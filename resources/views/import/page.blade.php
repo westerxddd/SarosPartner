@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Import')
+@section('title', 'Import - SarosPartners')
 
 @section('content_header')
     <h1>Import</h1>

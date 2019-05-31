@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Ogłoszenia')
+@section('title', 'Ogłoszenia - SarosPartners')
 
 @section('content')
     <div class="row">
