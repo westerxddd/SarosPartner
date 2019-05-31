@@ -87,7 +87,8 @@ nav.navbar.navbar-static-top{
 .skin-blue{
     .main-header{
         background: #1d1d1d url('../img/bg.png');
-
+        border-bottom: 5px solid #DF001A;
+        
         .logo{
             background: transparent;
             transition: color ease-in-out .3s;
