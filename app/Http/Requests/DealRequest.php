@@ -24,9 +24,17 @@ class DealRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|required',
+            'name' => 'required',
             'extra' => 'required',
             'image' => 'image|max:5120'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Tytuł jest polem wymaganym!',
+            'extra.required' => 'Prefiks jest polem wymaganym',
         ];
     }
 }

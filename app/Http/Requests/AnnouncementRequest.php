@@ -28,4 +28,11 @@ class AnnouncementRequest extends FormRequest
             'image' => 'image|max:5120'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Tytuł jest polem wymaganym!',
+        ];
+    }
 }

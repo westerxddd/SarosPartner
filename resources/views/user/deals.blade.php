@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="box-footer no-padding">
                                         <ul class="nav nav-stacked">
-                                            <li class="img-wrapper"><img src="{{$deal->getImageSrc()}}" alt=""></li>
+                                            <li class="deal-img-wrapper"><img src="{{$deal->getImageSrc()}}" alt=""></li>
                                             <li><a>{{$deal->desc}}</a></li>
                                             <li><a><strong>Od:</strong><span class="pull-right">{{date('d.m.Y H:i', strtotime($deal->start_at))}}</span></a></li>
                                             <li><a><strong>Do:</strong><span class="pull-right">{{date('d.m.Y H:i', strtotime($deal->end_at))}}</span></a></li>
