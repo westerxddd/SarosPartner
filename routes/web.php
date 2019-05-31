@@ -28,6 +28,10 @@ Route::group([
     Route::get('/deals','DealController@index')->name('deals');
     Route::post('/deals/store','DealController@store')->name('deals.store');
 
+    /*** ANNOUNCEMENTS ***/
+    Route::get('/announcements','AnnouncementController@index')->name('announcements');
+    Route::post('/announcements/store','AnnouncementController@store')->name('announcements.store');
+
 });
 
 Route::get('/register/{token}', 'UserController@registration')->name('users.register');

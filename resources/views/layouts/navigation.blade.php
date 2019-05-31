@@ -11,11 +11,24 @@
         <li class="{{ Request::is('deals') ? 'active' : '' }}">
             <a href="{{route('deals')}}"><i class="fa fa-star" aria-hidden="true"></i><span>Promocje</span></a>
         </li>
+        <li class="{{ Request::is('announcements') ? 'active' : '' }}">
+            <a href="{{route('announcements')}}"><i class="fa fa-bullhorn" aria-hidden="true"></i><span>Ogłoszenia</span></a>
+        </li>
     @else
 
         <li class="{{ Request::is('deals') ? 'active' : '' }}">
             <a href="{{route('deals')}}"><i class="fa fa-star" aria-hidden="true"></i><span>Promocje</span>
                 @if($dealsCount = \App\Deal::getCurrentDealsCount())
+                    <span class="pull-right-container">
+                      <small class="label pull-right bg-red">{{$dealsCount}}</small>
+                    </span>
+                @endif
+            </a>
+        </li>
+
+        <li class="{{ Request::is('announcements') ? 'active' : '' }}">
+            <a href="{{route('announcements')}}"><i class="fa fa-bullhorn" aria-hidden="true"></i><span>Ogłoszenia</span>
+                @if($dealsCount = \App\Announcement::getCurrentAnnouncementsCount())
                     <span class="pull-right-container">
                       <small class="label pull-right bg-red">{{$dealsCount}}</small>
                     </span>

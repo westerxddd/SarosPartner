@@ -14,6 +14,7 @@ class DealController extends Controller
         if (!auth()->user()->isAdmin()){
             $deals = Deal::where('start_at','<=', now())
                 ->where('end_at','>=', now())
+                ->orderBy('end_at','desc')
                 ->get();
 
             return view('user.deals',compact('deals'));

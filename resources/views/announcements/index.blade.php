@@ -1,46 +1,36 @@
 @extends('adminlte::page')
 
-@section('title', 'Promocje')
+@section('title', 'Ogłoszenia')
 
 @section('content')
     <div class="row">
         <div class="col-lg-4">
             <div class="box box-saros">
-                @include('deals.create')
+                @include('announcements.create')
             </div>
 
         </div>
         <div class="col-lg-8">
             <div class="box box-saros">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Promocje</h3>
+                    <h3 class="box-title">Ogłoszenia</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                @if(count($deals)>0)
-                    @foreach($deals as $deal)
+                @if(isset($announcements) && count($announcements)>0)
+                    @foreach($announcements as $announcement)
                         <div class="col-lg-4">
                             <div class="announcement-img-wrapper">
-                                @if($deal->getImageSrc() != false)
-                                    <img src="{{$deal->getImageSrc()}}" alt="">
+                                @if($announcement->getImageSrc() != false)
+                                    <img src="{{$announcement->getImageSrc()}}" alt="" style="max-width: 100%">
                                 @endif
                             </div>
-                            <h3>{{$deal->name}}</h3>
-                            <p>{{$deal->desc}}</p>
+                            <h3>{{$announcement->name}}</h3>
+                            <p>{{$announcement->desc}}</p>
                             <p>
-                                <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->start_at)->format('d.m.Y H:i')}}<br>
-                                <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->end_at)->format('d.m.Y H:i')}}
+                                <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->start_at)->format('d.m.Y H:i')}}<br>
+                                <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->end_at)->format('d.m.Y H:i')}}
                             </p>
-                            @if(strlen($deal->extra)>0)
-                            <p>
-                                <strong>Prefiksy objęte promocją:</strong><br>
-                                @foreach(explode('%|%',$deal->extra) as $prefix)
-                                    <span class="btn btn-sm btn-primary">
-                                        {{strtoupper($prefix)}}
-                                    </span>
-                                @endforeach
-                            </p>
-                            @endif
                         </div>
                     @endforeach
                 @endif

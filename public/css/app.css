@@ -173,3 +173,34 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
   border-top: 3px solid #E97122;
 }
 
+.bootstrap-datetimepicker-widget table td.active {
+  background: #E97122;
+}
+
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background: #E97122;
+}
+
+.deal-img-wrapper,
+.announcement-img-wrapper {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+  background: url(/images/default-img.gif?4172d0fe85cbe31c9bb4d9431d94b6ca);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.deal-img-wrapper img,
+.announcement-img-wrapper img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+

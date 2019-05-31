@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Pulpit - SarosPartners')
 
 @section('content_header')
     <h1>Pulpit</h1>

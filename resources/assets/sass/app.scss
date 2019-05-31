@@ -171,3 +171,35 @@ nav.navbar.navbar-static-top{
     }
 }
 
+.bootstrap-datetimepicker-widget{
+    table{
+        td.active{
+            background: #E97122;
+
+            &:hover{
+                background: #E97122;
+            }
+        }
+    }
+}
+
+.deal-img-wrapper,
+.announcement-img-wrapper{
+    height: 0;
+    padding-top: 56.25%;
+    position: relative;
+    background: url("../img/default-img.gif");
+    background-size: cover;
+    overflow: hidden;
+
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%,-50%);
+    }
+}
+
