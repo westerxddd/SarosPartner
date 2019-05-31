@@ -50,8 +50,13 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
   background: #1d1d1d url(/images/bg.png?3d5017549f0369e7efa2f546b6f17419);
 }
 
+.widget-user-2 .widget-user-header.bg-saros .fa.fa-star {
+  color: #f3cf1f;
+}
+
 .widget-user-2 .widget-user-header .widget-user-username {
   margin-left: 15px;
+  color: #fff;
 }
 
 .widget-user-2 li.img-wrapper {

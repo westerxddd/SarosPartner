@@ -37,10 +37,14 @@ nav.navbar.navbar-static-top{
         align-items: center;
         &.bg-saros{
             background: #1d1d1d url('../img/bg.png');
+            .fa.fa-star{
+                color: #f3cf1f;
+            }
         }
 
         .widget-user-username {
             margin-left: 15px;
+            color: #fff;
         }
     }
 
