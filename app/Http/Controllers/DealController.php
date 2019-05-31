@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Input;
 class DealController extends Controller
 {
     public function index(){
+        if (!auth()->user()->isAdmin()){
+            $deals = Deal::where('start_at','<=', now())
+                ->where('end_at','>=', now())
+                ->get();
+
+            return view('user.deals',compact('deals'));
+        }
+
         $deals = Deal::all();
         return view('deals.index', compact('deals'));
     }

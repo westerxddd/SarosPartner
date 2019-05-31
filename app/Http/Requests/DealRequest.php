@@ -24,8 +24,9 @@ class DealRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'string|required',
-            'image'=>'image|max:5120'
+            'name' => 'string|required',
+            'extra' => 'required',
+            'image' => 'image|max:5120'
         ];
     }
 }
