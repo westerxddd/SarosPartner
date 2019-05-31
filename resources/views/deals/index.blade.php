@@ -5,13 +5,13 @@
 @section('content')
     <div class="row">
         <div class="col-lg-4">
-            <div class="box box-primary">
+            <div class="box box-saros">
                 @include('deals.create')
             </div>
 
         </div>
         <div class="col-lg-8">
-            <div class="box box-primary">
+            <div class="box box-saros">
                 <div class="box-header with-border">
                     <h3 class="box-title">Promocje</h3>
                 </div>

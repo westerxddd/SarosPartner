@@ -17,7 +17,7 @@
                         @foreach($deals as $deal)
                             <div class="col-lg-4">
                                 <div class="box box-widget widget-user-2">
-                                    <div class="widget-user-header bg-primary">
+                                    <div class="widget-user-header bg-saros">
                                         <div class="widget-user-image">
                                             <i class="fa fa-star fa-3x" aria-hidden="true"></i>
                                         </div>

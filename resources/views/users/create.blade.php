@@ -1,4 +1,4 @@
-<div class="box box-primary">
+<div class="box box-saros">
     {{ Form::open(['route' => 'users.invite']) }}
     <div class="box-header with-border">
         <h3 class="box-title">Wyślij zaproszenie:</h3>

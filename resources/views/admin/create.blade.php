@@ -1,4 +1,4 @@
-<div class="box box-primary">
+<div class="box box-saros">
     {{ Form::open(['route' => 'admin.register']) }}
         <div class="box-header with-border">
             <h3 class="box-title">Dodaj administratora:</h3>

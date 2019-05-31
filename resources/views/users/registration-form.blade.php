@@ -47,7 +47,7 @@
                 <section class="content">
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="box box-primary">
+                            <div class="box box-saros">
                                 @if(isset($user->token))
                                     {{ Form::open(['route' => ['users.store',$user->id]]) }}
                                     <div class="box-body">

@@ -8,7 +8,7 @@
         <div class="col-lg-4 col-12">
             <div class="box box-widget widget-user-2">
                 <!-- Add the bg color to the header using any of the bg-* classes -->
-                <div class="widget-user-header bg-primary">
+                <div class="widget-user-header bg-saros">
                     <div class="widget-user-image">
                         <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
                     </div>
@@ -37,7 +37,7 @@
 
         @if(isset($client->articles))
             <div class="col-lg-8 col-12">
-                <div class="box box-primary">
+                <div class="box box-saros">
                     <div class="box-header with-border">
                         <h3 class="box-title">Artykuły</h3>
                     </div>

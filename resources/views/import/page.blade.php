@@ -9,12 +9,12 @@
 @section('content')
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="box box-primary">
+            <div class="box box-saros">
                 @include('import.client')
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="box box-primary">
+            <div class="box box-saros">
                 @include('import.articles')
             </div>
         </div>

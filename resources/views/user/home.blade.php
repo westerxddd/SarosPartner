@@ -43,7 +43,7 @@
         </div>
         @if(auth()->user()->hasArticles())
             <div class="col-lg-8 col-12">
-                <div class="box box-primary">
+                <div class="box box-saros">
                     <div class="box-header with-border">
                         <h3 class="box-title">Artykuły</h3>
                     </div>

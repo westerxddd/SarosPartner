@@ -46,6 +46,10 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
           align-items: center;
 }
 
+.widget-user-2 .widget-user-header.bg-saros {
+  background: #1d1d1d url(/images/bg.png?3d5017549f0369e7efa2f546b6f17419);
+}
+
 .widget-user-2 .widget-user-header .widget-user-username {
   margin-left: 15px;
 }
@@ -73,5 +77,60 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 
 .fa.fa-star.extra-points {
   color: #f3cf1f;
+}
+
+.skin-blue .main-header {
+  background: #1d1d1d url(/images/bg.png?3d5017549f0369e7efa2f546b6f17419);
+}
+
+.skin-blue .main-header .logo {
+  background: transparent;
+  -webkit-transition: color ease-in-out .3s;
+  transition: color ease-in-out .3s;
+}
+
+.skin-blue .main-header .logo:hover {
+  background: transparent;
+  color: #E97122;
+}
+
+.skin-blue .main-header .navbar {
+  background: transparent;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle {
+  -webkit-transition: color ease-in-out .3s;
+  transition: color ease-in-out .3s;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background: transparent;
+  color: #E97122;
+}
+
+.skin-blue .main-header .navbar .nav li a {
+  -webkit-transition: color ease-in-out .3s;
+  transition: color ease-in-out .3s;
+}
+
+.skin-blue .main-header .navbar .nav li a:hover {
+  color: #E97122;
+}
+
+.skin-blue .sidebar-menu li.active a {
+  border-left-color: #E97122;
+}
+
+.skin-blue .sidebar-menu li:hover a {
+  color: #E97122;
+}
+
+.skin-blue .sidebar-menu li a {
+  -webkit-transition: color ease-in-out .3s;
+  transition: color ease-in-out .3s;
+}
+
+.box.box-saros {
+  border-top: 3px solid #E97122;
 }
 

@@ -35,6 +35,9 @@ nav.navbar.navbar-static-top{
     .widget-user-header {
         display: flex;
         align-items: center;
+        &.bg-saros{
+            background: #1d1d1d url('../img/bg.png');
+        }
 
         .widget-user-username {
             margin-left: 15px;
@@ -66,3 +69,76 @@ nav.navbar.navbar-static-top{
 .fa.fa-star.extra-points{
     color: #f3cf1f;
 }
+
+.skin-blue .main-header .logo,
+.navbar.navbar-static-top{
+
+}
+
+.skin-blue{
+    .main-header{
+        background: #1d1d1d url('../img/bg.png');
+
+        .logo{
+            background: transparent;
+            transition: color ease-in-out .3s;
+
+            &:hover{
+                background: transparent;
+                color: #E97122;
+            }
+        }
+
+        .navbar{
+            background: transparent;
+
+            .sidebar-toggle{
+                transition: color ease-in-out .3s;
+                &:hover{
+                    background: transparent;
+                    color: #E97122;
+                }
+            }
+            .nav{
+                li{
+                    a{
+                        transition: color ease-in-out .3s;
+                        &:hover{
+                            color: #E97122;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar-menu{
+        li{
+            &.active{
+                a{
+                    border-left-color: #E97122;
+                }
+            }
+            &:hover{
+                a{
+                    color: #E97122;
+                }
+            }
+            a{
+                transition: color ease-in-out .3s;
+            }
+        }
+    }
+}
+
+.box{
+    &.box-saros{
+        border-top: 3px solid #E97122;
+        .box-header{
+            &.with-border{
+
+            }
+        }
+    }
+}
+
