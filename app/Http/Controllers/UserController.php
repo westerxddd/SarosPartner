@@ -55,6 +55,6 @@ class UserController extends Controller
         $user->created_at = now();
         $user->save();
 
-        return redirect()->back()->with('success','Użytkownik został zarejestrowny!');
+        return redirect()->route('login')->with('success','Użytkownik został zarejestrowny!');
     }
 }
