@@ -24,7 +24,7 @@ class AnnouncementRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|required',
+            'name' => 'required',
             'image' => 'image|max:5120'
         ];
     }
