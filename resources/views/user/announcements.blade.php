@@ -15,11 +15,11 @@
 
                     <div class="row">
                         @foreach($announcements as $announcement)
-                            <div class="col-lg-4">
+                            <div class="col-lg-3">
                                 <div class="box box-widget widget-user-2">
                                     <div class="widget-user-header bg-saros">
                                         <div class="widget-user-image">
-                                            <i class="fa fa-star fa-3x" aria-hidden="true"></i>
+                                            <i class="fa fa-bullhorn fa-3x" aria-hidden="true"></i>
                                         </div>
                                         <!-- /.widget-user-image -->
                                         <h3 class="widget-user-username">{{$announcement->name}}</h3>
