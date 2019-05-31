@@ -50,6 +50,10 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
   background: #1d1d1d url(/images/bg.png?3d5017549f0369e7efa2f546b6f17419);
 }
 
+.widget-user-2 .widget-user-header.bg-saros .fa {
+  color: #fff;
+}
+
 .widget-user-2 .widget-user-header.bg-saros .fa.fa-star {
   color: #f3cf1f;
 }
@@ -133,6 +137,36 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 .skin-blue .sidebar-menu li a {
   -webkit-transition: color ease-in-out .3s;
   transition: color ease-in-out .3s;
+}
+
+.login-page,
+.register-page {
+  background: #1d1d1d url(/images/bg.png?3d5017549f0369e7efa2f546b6f17419);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-logo a,
+.register-logo a {
+  color: #E97122;
+}
+
+.login-box,
+.register-box {
+  margin: 0;
+}
+
+.login-box-body,
+.register-box-body {
+  background: transparent;
+  margin: 0;
 }
 
 .box.box-saros {

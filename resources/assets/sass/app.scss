@@ -37,9 +37,14 @@ nav.navbar.navbar-static-top{
         align-items: center;
         &.bg-saros{
             background: #1d1d1d url('../img/bg.png');
-            .fa.fa-star{
-                color: #f3cf1f;
+            .fa{
+                color: #fff;
+                
+                &.fa-star{
+                    color: #f3cf1f;
+                }
             }
+
         }
 
         .widget-user-username {
@@ -133,6 +138,26 @@ nav.navbar.navbar-static-top{
             }
         }
     }
+}
+
+.login-page, .register-page{
+    background: #1d1d1d url('../img/bg.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-logo a, .register-logo a{
+    color: #E97122;
+}
+
+.login-box, .register-box{
+    margin: 0;
+}
+
+.login-box-body, .register-box-body{
+    background: transparent;
+    margin: 0;
 }
 
 .box{
