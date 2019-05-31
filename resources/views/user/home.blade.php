@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3">
             @if(isset(auth()->user()->client))
                 <div class="box box-widget widget-user-2">
                     <div class="widget-user-header bg-primary">
@@ -25,7 +25,6 @@
                             @if(isset(auth()->user()->client->nip))
                                 <li><a><strong>NIP</strong> <span class="pull-right">{{auth()->user()->client->nip}}</span></a></li>
                             @endif
-
                         </ul>
                     </div>
                 </div>
