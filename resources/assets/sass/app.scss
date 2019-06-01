@@ -204,3 +204,24 @@ nav.navbar.navbar-static-top{
     }
 }
 
+.announcement-item{
+    opacity: 0.4;
+    .announcement-img-wrapper{
+        filter: grayscale(1);
+    }
+
+    &.active{
+        opacity: 1;
+        .announcement-img-wrapper{
+            filter: grayscale(0);
+        }
+    }
+}
+
+.d-flex{
+    display: flex;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}

@@ -23,17 +23,21 @@ class AnnouncementController extends Controller
         return view('announcements.index', compact('announcements'));
     }
 
-    public function store(AnnouncementRequest $request){
+    public function edit(Announcement $announcement){
+        return view('announcements.index', compact(['announcements','announcement']));
+    }
 
-        $announcement = new Announcement;
+    public function store(AnnouncementRequest $request, $id = null){
+        if (!isset($id)){
+            $announcement = new Announcement;
+        } else {
+            $announcement = Announcement::where('id', $id)->first();
+        }
+
         $announcement->name = $request->name;
         $announcement->desc = $request->desc;
         $announcement->start_at = Carbon::createFromTimeString($request->start_at);
         $announcement->end_at = Carbon::createFromTimeString($request->end_at);
-
-        if (isset($request->extra)){
-            $announcement->extra = implode('%|%',$request->extra);
-        }
 
         if (isset($request->image)){
             $file = $request->file('image');
@@ -43,6 +47,10 @@ class AnnouncementController extends Controller
 
         $announcement->save();
 
-        return redirect()->back()->with('success','Ogłoszenie '.$announcement->name.' została dodana pomyślnie!');
+        if (!isset($request->announcement)){
+            return redirect()->back()->with('success','Ogłoszenie "'.$announcement->name.'" została dodana pomyślnie!');
+        }
+
+        return redirect()->back()->with('success','Ogłoszenie "'.$announcement->name.'" została zaktualizowane!');
     }
 }

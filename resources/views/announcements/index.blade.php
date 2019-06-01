@@ -10,37 +10,46 @@
             </div>
 
         </div>
-        <div class="col-lg-8">
-            <div class="box box-saros">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Ogłoszenia</h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                @if(isset($announcements) && count($announcements)>0)
-                    @foreach($announcements as $announcement)
-                        <div class="col-lg-4">
-                            <div class="announcement-img-wrapper">
-                                @if($announcement->getImageSrc() != false)
-                                    <img src="{{$announcement->getImageSrc()}}" alt="" style="max-width: 100%">
-                                @endif
+        @if(!isset($announcement))
+            <div class="col-lg-8">
+                <div class="box box-saros">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Ogłoszenia</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body d-flex flex-wrap">
+                    @if(isset($announcements) && count($announcements)>0)
+                        @foreach($announcements as $announcement)
+                            <div class="col-lg-4">
+                                <div class="announcement-img-wrapper">
+                                    @if($announcement->getImageSrc() != false)
+                                        <img src="{{$announcement->getImageSrc()}}" alt="" style="max-width: 100%">
+                                    @endif
+                                </div>
+                                <h3>{{$announcement->name}}</h3>
+                                <p>{{$announcement->desc}}</p>
+                                <p>
+                                    <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->start_at)->format('d.m.Y H:i')}}<br>
+                                    <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->end_at)->format('d.m.Y H:i')}}
+                                </p>
+                                <p>
+                                    <a href="{{route('announcements.edit',$announcement->id)}}">
+                                        <button class="btn btn-sm btn-success">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
+                                </p>
                             </div>
-                            <h3>{{$announcement->name}}</h3>
-                            <p>{{$announcement->desc}}</p>
-                            <p>
-                                <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->start_at)->format('d.m.Y H:i')}}<br>
-                                <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->end_at)->format('d.m.Y H:i')}}
-                            </p>
-                        </div>
-                    @endforeach
-                @endif
+                        @endforeach
+                    @endif
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                    </div>
+                    <!-- /.box-footer -->
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer clearfix">
-                </div>
-                <!-- /.box-footer -->
             </div>
-        </div>
+        @endif
     </div>
 @stop
 

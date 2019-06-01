@@ -19,7 +19,7 @@
                 <div class="box-body">
                 @if(count($deals)>0)
                     @foreach($deals as $deal)
-                        <div class="col-lg-4">
+                        <div class="announcement-item col-lg-4 @if($deal->isDuring()) active @endif">
                             <div class="announcement-img-wrapper">
                                 @if($deal->getImageSrc() != false)
                                     <img src="{{$deal->getImageSrc()}}" alt="">
@@ -31,15 +31,16 @@
                                 <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->start_at)->format('d.m.Y H:i')}}<br>
                                 <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->end_at)->format('d.m.Y H:i')}}
                             </p>
-                            @if(strlen($deal->extra)>0)
-                            <p>
-                                <strong>Prefiksy objęte promocją:</strong><br>
-                                @foreach(explode('%|%',$deal->extra) as $prefix)
-                                    <span class="btn btn-sm btn-primary">
-                                        {{strtoupper($prefix)}}
+
+                            @if($prefixes = $deal->getPrefixes())
+                                <p>
+                                    <strong>Prefiksy objęte promocją:</strong><br>
+                                    @foreach($prefixes as $prefix)
+                                        <span class="btn btn-sm btn-primary">
+                                        {{$prefix}}
                                     </span>
-                                @endforeach
-                            </p>
+                                    @endforeach
+                                </p>
                             @endif
                         </div>
                     @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\ClientArticles;
+use App\Deal;
 use App\Http\Requests\ImportCSVRequest;
 use App\Imports\ArticlesForClientsImport;
 use App\Imports\ClientsImport;
@@ -44,6 +45,11 @@ class ImportController extends Controller
 
                 $clientCount = Client::all()->count();
                 $articleCount = ClientArticles::all()->count();
+                $deals =  Deal::where('start_at','<=', now())
+                    ->where('end_at','>=', now())
+                    ->orderBy('end_at','desc')
+                    ->get();
+
                 Excel::import(new ArticlesForClientsImport($request->extra), $request->file('csv_file'), 'csv');
                 $articleCount = ClientArticles::all()->count() - $articleCount;
                 $clientCount = $count = Client::all()->count() - $clientCount;

@@ -33,7 +33,7 @@ class DealController extends Controller
         $deal->end_at = Carbon::createFromTimeString($request->end_at);
 
         if (isset($request->extra)){
-            $deal->extra = implode('%|%',$request->extra);
+            $deal->extra = strtoupper(implode('%|%', $request->extra));
         }
 
         if (isset($request->image)){

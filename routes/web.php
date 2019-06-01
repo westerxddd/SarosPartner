@@ -30,8 +30,9 @@ Route::group([
 
     /*** ANNOUNCEMENTS ***/
     Route::get('/announcements','AnnouncementController@index')->name('announcements');
+    Route::get('/announcements/{announcement}','AnnouncementController@edit')->name('announcements.edit');
     Route::post('/announcements/store','AnnouncementController@store')->name('announcements.store');
-
+    Route::patch('/announcements/{announcement}', 'AnnouncementController@store')->name('announcements.update');
 });
 
 Route::get('/register/{token}', 'UserController@registration')->name('users.register');

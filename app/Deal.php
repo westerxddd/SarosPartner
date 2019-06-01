@@ -16,4 +16,20 @@ class Deal extends Model
             ->where('end_at','>=', now())
             ->get());
     }
+
+    public function getPrefixes(){
+        if(strlen($this->extra)>0){
+            return explode('%|%', $this->extra);
+        }
+
+        return false;
+    }
+
+    public function isDuring(){
+        if ($this->start_at <= now() && $this->end_at >= now()){
+            return true;
+        }
+
+        return false;
+    }
 }

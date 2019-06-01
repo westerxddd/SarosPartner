@@ -18,3 +18,5 @@ yarn-error.log
 /public/uploads/img/deals/*
 !public/uploads/img/deals/.gitkeep
 
+/public/uploads/img/announcements/*
+!public/uploads/img/announcements/.gitkeep

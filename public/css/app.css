@@ -205,3 +205,32 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
           transform: translate(-50%, -50%);
 }
 
+.announcement-item {
+  opacity: 0.4;
+}
+
+.announcement-item .announcement-img-wrapper {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.announcement-item.active {
+  opacity: 1;
+}
+
+.announcement-item.active .announcement-img-wrapper {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
