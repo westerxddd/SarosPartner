@@ -13,7 +13,7 @@ class AnnouncementController extends Controller
         if (!auth()->user()->isAdmin()){
             $announcements = Announcement::where('start_at','<=', now())
                 ->where('end_at','>=', now())
-                ->orderBy('end_at','desc')
+                ->orderBy('created_at','desc')
                 ->get();
 
             return view('user.announcements',compact('announcements'));
