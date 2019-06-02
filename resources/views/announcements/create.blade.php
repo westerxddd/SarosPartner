@@ -1,9 +1,18 @@
+<div class="clearfix"></div>
 {{ Form::open(['route' => isset($announcement) ? ['announcements.update',$announcement->id] : 'announcements.store','files'=>true]) }}
     @if(isset($announcement))
         {{ method_field('PATCH') }}
     @endif
     <div class="box-header with-border">
-        <h3 class="box-title">{{isset($announcement)?'Edtuj':'Dodaj'}} ogłoszenie</h3>
+        <h3 class="box-title">{{isset($announcement)?'Edtuj':'Dodaj'}} ogłoszenie
+            @if(isset($announcement))
+                <a href="{{route('announcements')}}">
+                    <div class="btn btn-success">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Dodaj nowe
+                    </div>
+                </a>
+            @endif
+        </h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">

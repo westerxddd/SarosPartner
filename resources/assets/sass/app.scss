@@ -166,7 +166,12 @@ nav.navbar.navbar-static-top{
         border-top: 3px solid #E97122;
         .box-header{
             &.with-border{
-
+                .box-title{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                }
             }
         }
     }
@@ -245,6 +250,9 @@ nav.navbar.navbar-static-top{
 .item-btns{
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 20px;
 
     .btn{
         margin-right: 3px;
@@ -253,4 +261,8 @@ nav.navbar.navbar-static-top{
 
 textarea.form-control{
     width: 100% !important;
+}
+
+.mb-15{
+    margin-bottom: 15px;
 }

@@ -3,7 +3,15 @@
         {{ method_field('PATCH') }}
     @endif
     <div class="box-header with-border">
-        <h3 class="box-title">{{isset($deal)?'Edtuj':'Dodaj'}} promocję</h3>
+        <h3 class="box-title">{{isset($deal)?'Edtuj':'Dodaj'}} promocję
+            @if(isset($deal))
+                <a href="{{route('deals')}}">
+                    <div class="btn btn-success">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Dodaj nową
+                    </div>
+                </a>
+            @endif
+        </h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
