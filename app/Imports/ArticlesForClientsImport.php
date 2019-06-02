@@ -4,6 +4,7 @@ namespace App\Imports;
 
 use App\Client;
 use App\ClientArticles;
+use App\Deal;
 use App\Point;
 use App\Import;
 use Illuminate\Http\Request;
@@ -17,7 +18,18 @@ class ArticlesForClientsImport implements ToCollection, WithHeadingRow
 
     public function  __construct($extra)
     {
-        $this->extra = isset($extra) ? $extra : [];
+        $extra = is_array($extra) ? $extra : [];
+
+        $deals = Deal::where('start_at','<=', now())
+            ->where('end_at','>=', now())
+            ->whereNull('deleted_at')
+            ->get();
+
+        foreach ($deals as $deal){
+            $extra = array_merge($deal->getPrefixes(), $extra);
+        }
+        $extra = array_unique($extra);
+        $this->extra = $extra;
     }
 
     public function collection(Collection $rows)
