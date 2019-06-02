@@ -152,6 +152,12 @@
             <!-- /.container -->
             @endif
         </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 0.1
+            </div>
+            <strong>Copyright © 2019 <a href="#"></a></strong> All rights reserved.
+        </footer>
         <!-- /.content-wrapper -->
 
     </div>
