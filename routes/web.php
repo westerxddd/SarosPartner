@@ -26,7 +26,10 @@ Route::group([
 
     /*** DEALS ***/
     Route::get('/deals','DealController@index')->name('deals');
+    Route::get('/deals/{deal}','DealController@edit')->name('deals.edit');
     Route::post('/deals/store','DealController@store')->name('deals.store');
+    Route::patch('/deals/{deal}', 'DealController@store')->name('deals.update');
+
 
     /*** ANNOUNCEMENTS ***/
     Route::get('/announcements','AnnouncementController@index')->name('announcements');

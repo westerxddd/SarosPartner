@@ -25,6 +25,19 @@ class Deal extends Model
         return false;
     }
 
+    public function getPrefixesSelect2(){
+        if(strlen($this->extra)>0){
+            $prefixes = [];
+            foreach (explode('%|%', $this->extra) as $prefix){
+                $prefixes[$prefix] = $prefix;
+            }
+
+            return $prefixes;
+        }
+
+        return false;
+    }
+
     public function isDuring(){
         if ($this->start_at <= now() && $this->end_at >= now()){
             return true;

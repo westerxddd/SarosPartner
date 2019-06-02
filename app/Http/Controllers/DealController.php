@@ -24,9 +24,18 @@ class DealController extends Controller
         return view('deals.index', compact('deals'));
     }
 
-    public function store(DealRequest $request){
+    public function edit(Deal $deal){
+        $deals = Deal::all();
+        return view('deals.index', compact(['deals','deal']));
+    }
 
-        $deal = new Deal;
+    public function store(DealRequest $request, $id = null){
+        if (!isset($id)){
+            $deal = new Deal;
+        } else {
+            $deal = Deal::where('id', $id)->first();
+        }
+
         $deal->name = $request->name;
         $deal->desc = $request->desc;
         $deal->start_at = Carbon::createFromTimeString($request->start_at);

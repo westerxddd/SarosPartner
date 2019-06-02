@@ -42,6 +42,13 @@
                                     @endforeach
                                 </p>
                             @endif
+                            <p>
+                                <a href="{{route('deals.edit',$deal->id)}}">
+                                    <button class="btn btn-sm btn-success">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </a>
+                            </p>
                         </div>
                     @endforeach
                 @endif

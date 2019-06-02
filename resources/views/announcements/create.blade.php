@@ -49,7 +49,7 @@
     <!-- /.box-body -->
     <div class="box-footer clearfix">
         <div class="form-group">
-            {{ Form::submit(isset($announcement->end_at) ?'Edytuj':'Dodaj',['class'=>'btn btn-sm btn-primary']) }}
+            {{ Form::submit(isset($announcement) ?'Edytuj':'Dodaj',['class'=>'btn btn-sm btn-primary']) }}
         </div>
     </div>
     <!-- /.box-footer -->
