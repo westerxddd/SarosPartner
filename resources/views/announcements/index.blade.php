@@ -10,7 +10,6 @@
             </div>
 
         </div>
-        @if(!isset($announcement))
             <div class="col-lg-8">
                 <div class="box box-saros">
                     <div class="box-header with-border">
@@ -49,7 +48,6 @@
                     <!-- /.box-footer -->
                 </div>
             </div>
-        @endif
     </div>
 @stop
 

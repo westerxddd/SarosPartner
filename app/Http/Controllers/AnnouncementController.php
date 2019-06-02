@@ -24,6 +24,7 @@ class AnnouncementController extends Controller
     }
 
     public function edit(Announcement $announcement){
+        $announcements = Announcement::all();
         return view('announcements.index', compact(['announcements','announcement']));
     }
 
