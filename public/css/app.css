@@ -207,6 +207,7 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 
 .announcement-item {
   opacity: 0.4;
+  margin-bottom: 15px;
 }
 
 .announcement-item .announcement-img-wrapper {
@@ -223,6 +224,25 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
           filter: grayscale(0);
 }
 
+.deal-item {
+  opacity: 0.4;
+  margin-bottom: 15px;
+}
+
+.deal-item .deal-img-wrapper {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.deal-item.active {
+  opacity: 1;
+}
+
+.deal-item.active .deal-img-wrapper {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,5 +252,22 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 .flex-wrap {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.item-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-btns .btn {
+  margin-right: 3px;
+}
+
+textarea.form-control {
+  width: 100% !important;
 }
 

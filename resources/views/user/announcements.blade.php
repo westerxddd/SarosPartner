@@ -28,8 +28,8 @@
                                         <ul class="nav nav-stacked">
                                             <li class="announcement-img-wrapper"><img src="{{$announcement->getImageSrc()}}" alt=""></li>
                                             <li><a>{{$announcement->desc}}</a></li>
-                                            <li><a><strong>Od:</strong><span class="pull-right">{{date('d.m.Y H:i', strtotime($announcement->start_at))}}</span></a></li>
-                                            <li><a><strong>Do:</strong><span class="pull-right">{{date('d.m.Y H:i', strtotime($announcement->end_at))}}</span></a></li>
+                                            {{--<li><a><strong>Od:</strong><span class="pull-right">{{date('d.m.Y H:i', strtotime($announcement->start_at))}}</span></a></li>--}}
+                                            {{--<li><a><strong>Do:</strong><span class="pull-right">{{date('d.m.Y H:i', strtotime($announcement->end_at))}}</span></a></li>--}}
                                         </ul>
                                     </div>
                                 </div>

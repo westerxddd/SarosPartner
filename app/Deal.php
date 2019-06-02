@@ -4,16 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Deal extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
     public function getImageSrc(){
         return url('uploads/img/deals/'.$this->image);
     }
 
     public static function getCurrentDealsCount(){
-        return count(DB::table('deals')->where('start_at','<=', now())
+        return count(DB::table('deals')
+            ->where('start_at','<=', now())
             ->where('end_at','>=', now())
+            ->whereNull('deleted_at')
             ->get());
     }
 

@@ -54,4 +54,10 @@ class AnnouncementController extends Controller
 
         return redirect()->back()->with('success','Ogłoszenie "'.$announcement->name.'" została zaktualizowane!');
     }
+
+    public function delete(Announcement $announcement){
+        $name = $announcement->name;
+        $announcement->delete();
+        return redirect()->back()->with('success', 'Ogłoszenie "'.$name.'" zostało pomyślnie usunięte!');
+    }
 }

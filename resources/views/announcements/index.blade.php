@@ -19,7 +19,7 @@
                     <div class="box-body d-flex flex-wrap">
                     @if(isset($announcements) && count($announcements)>0)
                         @foreach($announcements as $announcement)
-                            <div class="col-lg-4">
+                            <div class="announcement-item col-lg-4 @if($announcement->isDuring()) active @endif">
                                 <div class="announcement-img-wrapper">
                                     @if($announcement->getImageSrc() != false)
                                         <img src="{{$announcement->getImageSrc()}}" alt="" style="max-width: 100%">
@@ -31,13 +31,19 @@
                                     <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->start_at)->format('d.m.Y H:i')}}<br>
                                     <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->end_at)->format('d.m.Y H:i')}}
                                 </p>
-                                <p>
+                                <div class="item-btns">
                                     <a href="{{route('announcements.edit',$announcement->id)}}">
                                         <button class="btn btn-sm btn-success">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                         </button>
                                     </a>
-                                </p>
+                                    <form method="POST" action="{{route('announcements.delete',['$announcement'=>$announcement->id])}}" accept-charset="UTF-8" onsubmit="confirm('Czy na pewno chcesz usunąć ogłoszenie: {{ $announcement->name }}?')">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                    </form>
+                                </div>
+
                             </div>
                         @endforeach
                     @endif

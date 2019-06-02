@@ -19,7 +19,7 @@
                 <div class="box-body">
                 @if(count($deals)>0)
                     @foreach($deals as $deal)
-                        <div class="announcement-item col-lg-4 @if($deal->isDuring()) active @endif">
+                        <div class="deal-item col-lg-4 @if($deal->isDuring()) active @endif">
                             <div class="announcement-img-wrapper">
                                 @if($deal->getImageSrc() != false)
                                     <img src="{{$deal->getImageSrc()}}" alt="">
@@ -42,13 +42,18 @@
                                     @endforeach
                                 </p>
                             @endif
-                            <p>
+                            <div class="item-btns">
                                 <a href="{{route('deals.edit',$deal->id)}}">
                                     <button class="btn btn-sm btn-success">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </button>
                                 </a>
-                            </p>
+                                <form method="POST" action="{{route('deals.delete',['$announcement'=>$deal->id])}}" accept-charset="UTF-8" onsubmit="confirm('Czy na pewno chcesz usunąć ogłoszenie: {{ $deal->name }}?')">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </div>
                         </div>
                     @endforeach
                 @endif

@@ -55,4 +55,10 @@ class DealController extends Controller
 
         return redirect()->back()->with('success','Promocja '.$deal->name.' została dodana pomyślnie!');
     }
+
+    public function delete(Deal $deal){
+        $name = $deal->name;
+        $deal->delete();
+        return redirect()->back()->with('success', 'Promocja "'.$name.'" została pomyślnie usunięta!');
+    }
 }

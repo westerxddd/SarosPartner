@@ -205,14 +205,30 @@ nav.navbar.navbar-static-top{
 }
 
 .announcement-item{
+     opacity: 0.4;
+    margin-bottom: 15px;
+     .announcement-img-wrapper{
+         filter: grayscale(1);
+     }
+
+     &.active{
+         opacity: 1;
+         .announcement-img-wrapper{
+             filter: grayscale(0);
+         }
+     }
+ }
+
+.deal-item{
     opacity: 0.4;
-    .announcement-img-wrapper{
+    margin-bottom: 15px;
+    .deal-img-wrapper{
         filter: grayscale(1);
     }
 
     &.active{
         opacity: 1;
-        .announcement-img-wrapper{
+        .deal-img-wrapper{
             filter: grayscale(0);
         }
     }
@@ -224,4 +240,17 @@ nav.navbar.navbar-static-top{
 
 .flex-wrap{
     flex-wrap: wrap;
+}
+
+.item-btns{
+    display: flex;
+    align-items: center;
+
+    .btn{
+        margin-right: 3px;
+    }
+}
+
+textarea.form-control{
+    width: 100% !important;
 }

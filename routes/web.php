@@ -29,6 +29,7 @@ Route::group([
     Route::get('/deals/{deal}','DealController@edit')->name('deals.edit');
     Route::post('/deals/store','DealController@store')->name('deals.store');
     Route::patch('/deals/{deal}', 'DealController@store')->name('deals.update');
+    Route::delete('/deals/{deal}', 'DealController@delete')->name('deals.delete');
 
 
     /*** ANNOUNCEMENTS ***/
@@ -36,6 +37,7 @@ Route::group([
     Route::get('/announcements/{announcement}','AnnouncementController@edit')->name('announcements.edit');
     Route::post('/announcements/store','AnnouncementController@store')->name('announcements.store');
     Route::patch('/announcements/{announcement}', 'AnnouncementController@store')->name('announcements.update');
+    Route::delete('/announcements/{announcement}', 'AnnouncementController@delete')->name('announcements.delete');
 });
 
 Route::get('/register/{token}', 'UserController@registration')->name('users.register');
