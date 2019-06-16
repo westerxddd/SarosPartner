@@ -31,6 +31,9 @@ Route::group([
     Route::patch('/deals/{deal}', 'DealController@store')->name('deals.update');
     Route::delete('/deals/{deal}', 'DealController@delete')->name('deals.delete');
 
+    /*** SITES ***/
+    Route::get('/contact-form','SiteController@contactForm')->name('contact-form');
+    Route::post('/contact-form/send','SiteController@sendMsg')->name('send-msg');
 
     /*** ANNOUNCEMENTS ***/
     Route::get('/announcements','AnnouncementController@index')->name('announcements');

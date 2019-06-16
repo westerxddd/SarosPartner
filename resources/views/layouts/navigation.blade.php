@@ -35,5 +35,9 @@
                 @endif
             </a>
         </li>
+
+        <li class="{{ Request::is('contact-form') ? 'active' : '' }}">
+            <a href="{{route('contact-form')}}"><i class="fa fa-trophy" aria-hidden="true"></i><span>Zamów nagrodę</span></a>
+        </li>
     @endif
 </ul>
