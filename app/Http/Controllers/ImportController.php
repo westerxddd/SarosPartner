@@ -93,7 +93,7 @@ class ImportController extends Controller
             }
         }
 
-        if (!count($import->clients)>0 || !count($import->clients)>0){
+        if (!count($import->clients)>0 || !count($import->articles())>0){
             $import->delete();
         }
 
