@@ -13,6 +13,7 @@ Route::group([
 
     /*** CLIENTS ***/
     Route::get('/clients/{client}', 'ClientController@show')->name('clients.show');
+    Route::post('/clients/{client}/count-points', 'ClientController@countPoints')->name('clients.count-points');
 
     /*** DATA ***/
     Route::get('/data/clients', 'DataController@clients')->name('data.clients');
