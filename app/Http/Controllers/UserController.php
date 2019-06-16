@@ -47,12 +47,25 @@ class UserController extends Controller
    }
 
     public function store(User $user, Request $request){
-        $this->validate($request,[
-            'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
-            'password' => 'string|min:6',
-            'confirm_password' => 'string|same:password',
-            'privacy_policy' => 'required'
-        ]);
+        if (isset($request->admin) && $request->admin == 1){
+            $this->validate($request,[
+                'name' => 'required|string',
+                'email' => 'required|string|email|max:255|unique:users,email',
+                'password' => 'string|min:6',
+                'confirm_password' => 'string|same:password',
+            ]);
+
+            $user = new User;
+            $user->admin = 1;
+            $user->name = $request->name;
+        } else {
+            $this->validate($request,[
+                'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+                'password' => 'string|min:6',
+                'confirm_password' => 'string|same:password',
+                'privacy_policy' => 'required'
+            ]);
+        }
 
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
@@ -60,6 +73,9 @@ class UserController extends Controller
         $user->created_at = now();
         $user->save();
 
+        if (isset($request->admin) && $request->admin == 1){
+            return redirect()->back()->with('success','Administrator '.$user->name.' został dodany!');
+        }
         return redirect()->route('login')->with('success','Użytkownik został zarejestrowny!');
     }
 }

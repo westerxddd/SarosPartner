@@ -20,12 +20,14 @@ class SettingsController extends Controller
             $user->password = Hash::make($request->new_password);
         }
 
-        if (isset($request->nip)){
-            $user->client->nip = $request->nip;
-            $user->client->save();
-        } else {
-            $user->client->nip = null;
-            $user->client->save();
+        if (!$user->isAdmin()){
+            if (isset($request->nip)){
+                $user->client->nip = $request->nip;
+                $user->client->save();
+            } else {
+                $user->client->nip = null;
+                $user->client->save();
+            }
         }
 
         $user->save();

@@ -39,8 +39,8 @@
         <li class="{{ Request::is('contact-form') ? 'active' : '' }}">
             <a href="{{route('contact-form')}}"><i class="fa fa-trophy" aria-hidden="true"></i><span>Zamów nagrodę</span></a>
         </li>
-        <li class="{{ Request::is('settings') ? 'active' : '' }}">
-            <a href="{{route('settings')}}"><i class="fa fa-cogs" aria-hidden="true"></i><span>Ustawienia</span></a>
-        </li>
     @endif
+    <li class="{{ Request::is('settings') ? 'active' : '' }}">
+        <a href="{{route('settings')}}"><i class="fa fa-cogs" aria-hidden="true"></i><span>Ustawienia</span></a>
+    </li>
 </ul>

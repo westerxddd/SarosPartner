@@ -13,7 +13,7 @@
             <div class="col-lg-4">
                 <div class="box box-saros">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Dane klienta</h3>
+                        <h3 class="box-title">Edytuj dane użytkownika</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -24,10 +24,12 @@
                                 {{ Form::label('email','Adres email:') }}
                                 {{ Form::email('email',$user->email,['class'=>'form-control','placeholder'=>'Adres email']) }}
                             </div>
-                            <div class="form-group">
-                                {{ Form::label('nip','NIP:') }}
-                                {{ Form::text('nip',$user->client->nip ? $user->client->nip:'',['class'=>'form-control','placeholder'=>'NIP']) }}
-                            </div>
+                            @if(!$user->isAdmin())
+                                <div class="form-group">
+                                    {{ Form::label('nip','NIP:') }}
+                                    {{ Form::text('nip',$user->client->nip ? $user->client->nip:'',['class'=>'form-control','placeholder'=>'NIP']) }}
+                                </div>
+                            @endif
                             <div class="form-group">
                                 {{ Form::label('new_password','Nowe hasło:') }}
                                 {{ Form::password('new_password',['class'=>'form-control','placeholder'=>'Nowe hasło']) }}
@@ -37,7 +39,7 @@
                                 {{ Form::password('confirm_password',['class'=>'form-control','placeholder'=>'Potwierdź hasło']) }}
                             </div>
                             <div class="form-group">
-                                {{ Form::submit('Wyślij',['class'=>'btn btn-sm btn-primary']) }}
+                                {{ Form::submit('Edytuj',['class'=>'btn btn-sm btn-primary']) }}
                             </div>
                         </div>
                         <!-- /.box-body -->
@@ -49,6 +51,9 @@
                     </div>
                 </div>
             </div>
+            @if($user->isAdmin())
+                @include('sites.admin.settings')
+            @endif
         </div>
     </div>
 @stop
