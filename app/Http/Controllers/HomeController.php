@@ -33,10 +33,12 @@ class HomeController extends Controller
 
         $deals = Deal::where('start_at','<=', now())
             ->where('end_at','>=', now())
+            ->orderBy('created_at','DESC')
             ->get();
 
         $announcements = Announcement::where('start_at','<=', now())
             ->where('end_at','>=', now())
+            ->orderBy('created_at','DESC')
             ->get();
 
         return view('user.home',compact(['deals','announcements']));
