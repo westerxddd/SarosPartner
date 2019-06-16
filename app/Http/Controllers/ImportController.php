@@ -38,7 +38,7 @@ class ImportController extends Controller
                  * TODO: ustalić jak ma wyglądać ostateczny plik CSV z klientami do importu!
                  */
                 $count = Client::all()->count();
-                dd(Excel::import(new ClientsImport, $request->file('csv_file'), 'csv'));
+                //dd(Excel::import(new ClientsImport, $request->file('csv_file'), 'csv'));
                 $count = Client::all()->count() - $count;
 
                 return redirect()->back()->with('success','Import został zakończony pomyślnie! Zaimportowano '.$count.' nowych kontrahentów!');
@@ -95,8 +95,13 @@ class ImportController extends Controller
 
         if (!count($import->clients)>0 || !count($import->articles())>0){
             $import->delete();
+            return redirect()->back()->with('success','Import został wycofany:  -'.$countArticles.' artykułów, -'.$countClients.' kontrahentów ]');
         }
 
-        return redirect()->back()->with('success','Import został wycofany:  -'.$countArticles.' artykułów, -'.$countClients.' kontrahentów ]');
+        if ($countArticles<1 || $countClients<1){
+            return redirect()->back()->with('error','Nie można usunąć importu! Niektóre elementy z tego importu są powiązane z innymi elementami, np. kontrahent już posiada konto użytkownika!');
+        }
+
+        return redirect()->back()->with('success','Nie udało się w całkowicie cofnąć importu:  -'.$countArticles.' artykułów, -'.$countClients.' kontrahentów ]');
     }
 }

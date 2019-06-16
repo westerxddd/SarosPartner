@@ -18,7 +18,7 @@
 <!-- /.box-body -->
 <div class="box-footer clearfix">
     <div class="form-group">
-        {{ Form::submit('Importuj',['class'=>'btn btn-sm btn-primary']) }}
+        {{ Form::submit('Importuj',['class'=>'btn btn-sm btn-primary','data-toggle'=>"modal",'data-target'=>"#loadingModal"]) }}
     </div>
 </div>
 <!-- /.box-footer -->
