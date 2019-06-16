@@ -25,4 +25,10 @@ class SiteController extends Controller
 
         return redirect()->back()->with('success','Wiadomość została pomyślnie wysłana!');
     }
+
+    public function settings(){
+        $user = auth()->user();
+
+        return view('sites.settings', compact('user'));
+    }
 }

@@ -139,6 +139,8 @@ return [
     */
     'attributes' => [
         'password' => 'Hasło',
-        'confirm_password' => 'Potwierdzenie hasła'
+        'confirm_password' => 'Potwierdzenie hasła',
+        'new_password' => 'Nowe hasło',
+        'nip' => 'Numer NIP'
     ],
 ];

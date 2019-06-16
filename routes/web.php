@@ -34,6 +34,10 @@ Route::group([
     /*** SITES ***/
     Route::get('/contact-form','SiteController@contactForm')->name('contact-form');
     Route::post('/contact-form/send','SiteController@sendMsg')->name('send-msg');
+    Route::get('/settings','SiteController@settings')->name('settings');
+
+    /*** SETTINGS ***/
+    Route::post('/setings/change-settings','SettingsController@changeSettings')->name('change-settings');
 
     /*** ANNOUNCEMENTS ***/
     Route::get('/announcements','AnnouncementController@index')->name('announcements');
