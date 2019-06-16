@@ -105,7 +105,7 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 
 .skin-blue .main-header .logo:hover {
   background: transparent;
-  color: #E97122;
+  color: #DF0019;
 }
 
 .skin-blue .main-header .navbar {
@@ -119,7 +119,7 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 
 .skin-blue .main-header .navbar .sidebar-toggle:hover {
   background: transparent;
-  color: #E97122;
+  color: #DF0019;
 }
 
 .skin-blue .main-header .navbar .nav li a {
@@ -128,15 +128,15 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 }
 
 .skin-blue .main-header .navbar .nav li a:hover {
-  color: #E97122;
+  color: #DF0019;
 }
 
 .skin-blue .sidebar-menu li.active a {
-  border-left-color: #E97122;
+  border-left-color: #DF0019;
 }
 
 .skin-blue .sidebar-menu li:hover a {
-  color: #E97122;
+  color: #DF0019;
 }
 
 .skin-blue .sidebar-menu li a {
@@ -160,7 +160,7 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 
 .login-logo a,
 .register-logo a {
-  color: #E97122;
+  color: #DF0019;
 }
 
 .login-box,
@@ -175,7 +175,7 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 }
 
 .box.box-saros {
-  border-top: 3px solid #E97122;
+  border-top: 3px solid #DF0019;
 }
 
 .box.box-saros .box-header.with-border .box-title {
@@ -192,11 +192,11 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
 }
 
 .bootstrap-datetimepicker-widget table td.active {
-  background: #E97122;
+  background: #DF0019;
 }
 
 .bootstrap-datetimepicker-widget table td.active:hover {
-  background: #E97122;
+  background: #DF0019;
 }
 
 .deal-img-wrapper,

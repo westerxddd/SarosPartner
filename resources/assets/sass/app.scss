@@ -105,7 +105,7 @@ nav.navbar.navbar-static-top{
 
             &:hover{
                 background: transparent;
-                color: #E97122;
+                color: #DF0019;
             }
         }
 
@@ -116,7 +116,7 @@ nav.navbar.navbar-static-top{
                 transition: color ease-in-out .3s;
                 &:hover{
                     background: transparent;
-                    color: #E97122;
+                    color: #DF0019;
                 }
             }
             .nav{
@@ -124,7 +124,7 @@ nav.navbar.navbar-static-top{
                     a{
                         transition: color ease-in-out .3s;
                         &:hover{
-                            color: #E97122;
+                            color: #DF0019;
                         }
                     }
                 }
@@ -136,12 +136,12 @@ nav.navbar.navbar-static-top{
         li{
             &.active{
                 a{
-                    border-left-color: #E97122;
+                    border-left-color: #DF0019;
                 }
             }
             &:hover{
                 a{
-                    color: #E97122;
+                    color: #DF0019;
                 }
             }
             a{
@@ -159,7 +159,7 @@ nav.navbar.navbar-static-top{
 }
 
 .login-logo a, .register-logo a{
-    color: #E97122;
+    color: #DF0019;
 }
 
 .login-box, .register-box{
@@ -173,7 +173,7 @@ nav.navbar.navbar-static-top{
 
 .box{
     &.box-saros{
-        border-top: 3px solid #E97122;
+        border-top: 3px solid #DF0019;
         .box-header{
             &.with-border{
                 .box-title{
@@ -190,10 +190,10 @@ nav.navbar.navbar-static-top{
 .bootstrap-datetimepicker-widget{
     table{
         td.active{
-            background: #E97122;
+            background: #DF0019;
 
             &:hover{
-                background: #E97122;
+                background: #DF0019;
             }
         }
     }
