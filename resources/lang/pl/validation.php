@@ -126,6 +126,7 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'privacy_policy.required' => 'Oświadczenie zapoznania się z polityką prywatności jest wymagane!'
     ],
     /*
     |--------------------------------------------------------------------------
@@ -143,6 +144,6 @@ return [
         'new_password' => 'Nowe hasło',
         'nip' => 'Numer NIP',
         'title' => 'Tytuł',
-        'points' => 'Punkty'
+        'points' => 'Punkty',
     ],
 ];

@@ -64,6 +64,12 @@
                                             {{ Form::label('confirm_password','Potwierdź hasło:') }}
                                             {{ Form::password('confirm_password',['class'=>'form-control']) }}
                                         </div>
+                                        <div class="form-group">
+                                            <label>
+                                                {{ Form::checkbox('privacy_policy') }}
+                                                Oświadczam, że się zapoznałem z <a href="https://www.saros.com.pl/polityka-prywatnosci" target="_blank">polityką prywatności</a> i ją akceptuję.
+                                            </label>
+                                        </div>
                                     </div>
                                     <!-- /.box-body -->
                                     <div class="box-footer clearfix">

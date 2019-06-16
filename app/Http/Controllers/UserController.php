@@ -34,6 +34,10 @@ class UserController extends Controller
    }
 
    public function registration($token, Request $request){
+       if (auth()->user()){
+           return redirect()->route('dashboard')->with('error','Musisz się wylogować by móc potwierdzić nowe konto!');
+       }
+
        $user = User::where('token','=',$token)->first();
        if (!isset($user)){
            return redirect()->route('login');
@@ -46,7 +50,8 @@ class UserController extends Controller
         $this->validate($request,[
             'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
             'password' => 'string|min:6',
-            'confirm_password' => 'string|same:password'
+            'confirm_password' => 'string|same:password',
+            'privacy_policy' => 'required'
         ]);
 
         $user->email = $request->email;
