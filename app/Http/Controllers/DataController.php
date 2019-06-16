@@ -30,7 +30,7 @@ class DataController extends Controller
         }
 
         if (isset($request->activation) && $request->activation==1){
-            $clients->where('points.amount','>=',4000)
+            $clients->where('points.amount','>=',isset($request->minpts) ? $request->minpts : 4000)
                 ->doesntHave('user');
         }
 
