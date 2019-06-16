@@ -25,8 +25,26 @@
                         <li><a><strong>NIP</strong> <span class="pull-right">{{$client->nip}}</span></a></li>
                         @endif
                         <li><a><strong>Punkty</strong> <span class="pull-right">{{number_format($client->getPoints(),0,',',' ')}}</span></a></li>
-
                     </ul>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            {{ Form::open(['route' => ['clients.count-points','client'=>$client->id],'class'=>'dt-filters-container']) }}
+                            @csrf
+                            <div class="form-group">
+{{--                                {{ Form::label('title','Tytuł:') }}--}}
+                                {{ Form::text('title','',['class'=>'form-control','placeholder'=>'Tytuł']) }}
+                            </div>
+                            <div class="form-group">
+{{--                                {{ Form::label('points','Punkty:') }}--}}
+                                {{ Form::number('points','',['class'=>'form-control','placeholder'=>'+/- Punkty','step'=>'0.01' ]) }}
+                            </div>
+                            <div class="form-group form-submit">
+                                {{ Form::submit('Podlicz',['class'=>'btn btn-primary']) }}
+                            </div>
+                            {{ Form::close() }}
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -43,7 +61,7 @@
                     </div>
                     <div class="box-body">
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <form id="dt-filters" class="dt-filters-container">
                                     <div class="form-group">
                                         <label>
@@ -69,18 +87,6 @@
                                         </label>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="col-lg-4">
-                                {{ Form::open(['route' => ['clients.count-points','client'=>$client->id],'class'=>'dt-filters-container']) }}
-                                    @csrf
-                                    <div class="form-group">
-                                        {{ Form::label('points','Punkty:') }}
-                                        {{ Form::number('points','',['class'=>'form-control','placeholder'=>'Punkty','step'=>'0.01' ]) }}
-                                    </div>
-                                    <div class="form-group form-submit">
-                                        {{ Form::submit('Podlicz',['class'=>'btn btn-primary']) }}
-                                    </div>
-                                {{ Form::close() }}
                             </div>
                         </div>
                         <div class="row">

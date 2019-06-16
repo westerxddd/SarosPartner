@@ -13,16 +13,17 @@ class ClientController extends Controller
     }
 
     public function countPoints(Client $client, Request $request){
-        if (!is_numeric($request->points)){
-            return redirect()->back()->with('error','Wprowadzona wartość nie jest liczbowa!');
-        }
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'points' => 'required|numeric',
+        ]);
 
         $points = $request->points;
 
         $client->addPoints($points);
 
         $article = new ClientArticles;
-        $article->prefix = 'Ręczna zmiana punktów';
+        $article->prefix = $request->title;//'Ręczna zmiana punktów';
         $article->client_id = $client->id;
         $article->netto = $points;
         $article->save();

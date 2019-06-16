@@ -34,8 +34,6 @@ class DataController extends Controller
                 ->doesntHave('user');
         }
 
-
-
         $clients->select(['clients.id','clients.name','clients.nip','points.amount']);
 
         return \Yajra\DataTables\Facades\DataTables::eloquent($clients)
@@ -77,6 +75,9 @@ class DataController extends Controller
 
         return \Yajra\DataTables\Facades\DataTables::eloquent($articles)
             ->addIndexColumn()
+            ->editColumn('netto',function($article){
+                return number_format($article->netto,2,'.',' ');
+            })
             ->editColumn('multiple',function($article){
                 if ($article->multiple){
                     return '<i class="fa fa-star extra-points" aria-hidden="true"></i>';
