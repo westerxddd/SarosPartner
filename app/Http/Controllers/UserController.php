@@ -12,13 +12,22 @@ use Illuminate\Support\Facades\Mail;
 class UserController extends Controller
 {
    public function sendInvitation(Request $request){
-       $this->validate($request,[
-           'email' => 'required|string|email|max:255|unique:users,email',
-       ]);
-
         $client = Client::where('id','=',$request->client)->first();
 
-        $user = new User;
+        if (!isset($request->resend) && $request->resend != 1){
+            $this->validate($request,[
+                'email' => 'required|string|email|max:255|unique:users,email',
+            ]);
+            $user = new User;
+        } else {
+            $user = $client->user;
+            
+            $this->validate($request,[
+                'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+            ]);
+
+        }
+
         $user->name = $client->name;
         $user->email = $request->email;
         $user->password = Hash::make('SarosPartners');

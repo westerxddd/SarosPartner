@@ -50,6 +50,8 @@
 
             @if(!isset($client->user))
                 @include('users.create')
+            @elseif(isset($client->user) && $client->user->token != null)
+                @include('users.resend')
             @endif
         </div>
 
