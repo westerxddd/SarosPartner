@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Saros Partners',
+    'title' => 'Saros Partner Serwis',
 
     'title_prefix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Saros</b>Partners',
+    'logo' => '<img src="/images/saros-logo.png" alt="Saros logo"><br>Saros Partner Serwis</a>',
 
     'logo_mini' => '<b>S</b>P',
 

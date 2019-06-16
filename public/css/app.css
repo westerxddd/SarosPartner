@@ -88,6 +88,10 @@ nav.navbar.navbar-static-top .navbar-custom-menu ul.nav.navbar-nav li.user-li {
   color: #f3cf1f;
 }
 
+.main-header .logo .logo-lg img {
+  max-height: 40px;
+}
+
 .skin-blue .main-header {
   background: #1d1d1d url(/images/bg.png?3d5017549f0369e7efa2f546b6f17419);
   border-bottom: 5px solid #DF001A;

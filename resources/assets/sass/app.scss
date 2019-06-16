@@ -84,6 +84,16 @@ nav.navbar.navbar-static-top{
 
 }
 
+.main-header {
+    .logo {
+        .logo-lg{
+            img{
+                max-height: 40px;
+            }
+        }
+    }
+}
+
 .skin-blue{
     .main-header{
         background: #1d1d1d url('../img/bg.png');
