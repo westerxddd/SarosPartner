@@ -65,7 +65,7 @@
                                     <div class="timeline-item">
                                         <span class="time"><i class="fa fa-clock-o"></i> {{$deal->created_at->format('H:i')}}</span>
 
-                                        <h3 class="timeline-header">{{$deal->name}}</h3>
+                                        <h3 class="timeline-header"><strong>{{$deal->name}}</strong></h3>
                                         <div class="announcement-img-wrapper">
                                             @if($deal->getImageSrc() != false)
                                                 <img src="{{$deal->getImageSrc()}}" alt="">
