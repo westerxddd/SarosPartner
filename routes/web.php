@@ -18,6 +18,7 @@ Route::group([
     /*** DATA ***/
     Route::get('/data/clients', 'DataController@clients')->name('data.clients');
     Route::get('/data/articles', 'DataController@clientArticles')->name('data.articles');
+    Route::get('/data/prefixes', 'DataController@prefixes')->name('data.prefixes');
 
     /*** USERS ***/
     Route::post('/users/invitation', 'UserController@sendInvitation')->name('users.invite');

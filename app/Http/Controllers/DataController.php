@@ -57,7 +57,6 @@ class DataController extends Controller
 
     public function clientArticles(Request $request){
         $client_id = auth()->user()->isAdmin() ? $request->clientId : auth()->user()->client->id;
-
         $articles = ClientArticles::query()->where('client_id',$client_id);
 
         if (isset($request->prefix)){
@@ -74,6 +73,8 @@ class DataController extends Controller
             $articles->where('netto', '<=', $maxnetto);
         }
 
+        $articles->orderBy('created_at','DESC');
+
         return \Yajra\DataTables\Facades\DataTables::eloquent($articles)
             ->addIndexColumn()
             ->editColumn('multiple',function($article){
@@ -88,5 +89,15 @@ class DataController extends Controller
             })
             ->rawColumns(['multiple', 'DT_RowIndex'])
             ->toJson();
+    }
+
+    public function prefixes(Request $request){
+        $prefixes = ClientArticles::select('prefix')
+            ->where('prefix','LIKE', '%'.$request->prefix.'%')
+            ->distinct()
+            ->get();
+
+        return response()->json($prefixes);
+
     }
 }

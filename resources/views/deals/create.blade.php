@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('extra','Prefiksy artykułów objętych promocją') }}
-            {{ Form::select('extra[]', isset($deal) && strlen($deal->extra)>0 ? $deal->getPrefixesSelect2():[], isset($deal) && strlen($deal->extra)>0 ?$deal->getPrefixes():[],['class'=>'form-control select2','multiple'=>'multiple']) }}
+            {{ Form::select('extra[]', isset($deal) && strlen($deal->extra)>0 ? $deal->getPrefixesSelect2():[], isset($deal) && strlen($deal->extra)>0 ?$deal->getPrefixes():[],['class'=>'form-control select2','multiple'=>'multiple','id'=>'prefixes']) }}
         </div>
         <div class="form-group">
             {{ Form::label('start_at','Start') }}

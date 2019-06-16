@@ -81,6 +81,29 @@
                 tags: true
             });
 
+            $('select#prefixes').select2({
+                ajax: {
+                    url: '{{route('data.prefixes')}}',
+                    dataType: 'json',
+                    data: function (params) {
+                        var query = {
+                            prefix: params.term,
+                        }
+                        return query;
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: $.map(data, function (item) {
+                                return {
+                                    id: item.prefix,
+                                    text: item.prefix
+                                };
+                            })
+                        };
+                    }
+                }
+            });
+
             $(function () {
                 $('.datetimepicker').datetimepicker({
                         locale: 'pl'
