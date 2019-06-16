@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         {{ Form::label('extra','Prefiksy artykułów objętych podwójną liczbą pktów:') }}
-        {{ Form::select('extra[]',[],[],['class'=>'form-control select2','multiple'=>'multiple']) }}
+        {{ Form::select('extra[]',[],[],['class'=>'form-control select2','multiple'=>'multiple','id'=>'prefixes']) }}
     </div>
 </div>
 <!-- /.box-body -->
