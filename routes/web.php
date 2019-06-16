@@ -10,6 +10,7 @@ Route::group([
     /*** IMPORT ***/
     Route::get('/import', 'ImportController@import')->name('import');
     Route::post('/import/store', 'ImportController@store')->name('import.store');
+    Route::get('/import/undo/{import}', 'ImportController@undo')->name('import.undo');
 
     /*** CLIENTS ***/
     Route::get('/clients/{client}', 'ClientController@show')->name('clients.show');

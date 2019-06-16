@@ -6,6 +6,7 @@ use App\Client;
 use App\ClientArticles;
 use App\Deal;
 use App\Http\Requests\ImportCSVRequest;
+use App\Import;
 use App\Imports\ArticlesForClientsImport;
 use App\Imports\ClientsImport;
 use App\Point;
@@ -16,7 +17,12 @@ use Maatwebsite\Excel\HeadingRowImport;
 class ImportController extends Controller
 {
     public function import(){
-        return view('import.page');
+        if (!auth()->user()->isAdmin()){
+            return redirect()->route('dashboard')->with('error','Brak wymaganych uprawnień!');
+        }
+
+        $imports = Import::orderBy('created_at','DESC')->get();
+        return view('import.page', compact('imports'));
     }
 
     public function store(ImportCSVRequest $request){
@@ -60,6 +66,37 @@ class ImportController extends Controller
             default:
                 return redirect()->back()->with('error','Nieprawidłowe żądanie!');
         }
+    }
 
+    public function undo(Import $import){
+        $clients = Client::where('import_id',$import->id)->get();
+        $articles = ClientArticles::where('import_id',$import->id)->get();
+        $countArticles = 0;
+        $countClients = 0;
+
+        if (count($articles)>0){
+            foreach ($articles as $article){
+                $points = $article->netto * -1;
+                $article->client->addPoints($points);
+                $article->delete();
+                $countArticles++;
+            }
+        }
+
+        if (count($clients)>0){
+            foreach ($clients as $client){
+                if (!isset($client->user)){
+                    $client->points->delete();
+                    $client->delete();
+                    $countClients++;
+                }
+            }
+        }
+
+        if (!count($import->clients)>0 || !count($import->clients)>0){
+            $import->delete();
+        }
+
+        return redirect()->back()->with('success','Import został wycofany:  -'.$countArticles.' artykułów, -'.$countClients.' kontrahentów ]');
     }
 }

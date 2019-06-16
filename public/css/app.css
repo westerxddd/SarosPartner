@@ -307,3 +307,7 @@ textarea.form-control {
           justify-content: space-between;
 }
 
+.col {
+  padding: 0 15px;
+}
+
