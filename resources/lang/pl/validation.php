@@ -141,6 +141,8 @@ return [
         'password' => 'Hasło',
         'confirm_password' => 'Potwierdzenie hasła',
         'new_password' => 'Nowe hasło',
-        'nip' => 'Numer NIP'
+        'nip' => 'Numer NIP',
+        'title' => 'Tytuł',
+        'points' => 'Punkty'
     ],
 ];
