@@ -61,7 +61,7 @@
     <!-- /.box-body -->
     <div class="box-footer clearfix">
         <div class="form-group">
-            {{ Form::submit(isset($deal) ?'Edytuj':'Dodaj',['class'=>'btn btn-sm btn-primary']) }}
+            {{ Form::submit(isset($deal) ?'Zapisz':'Dodaj',['class'=>'btn btn-sm btn-primary']) }}
         </div>
     </div>
     <!-- /.box-footer -->

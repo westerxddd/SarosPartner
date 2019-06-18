@@ -16,25 +16,25 @@
         </li>
     @else
 
-        <li class="{{ Request::is('deals') ? 'active' : '' }}">
-            <a href="{{route('deals')}}"><i class="fa fa-star" aria-hidden="true"></i><span>Promocje</span>
-                @if($dealsCount = \App\Deal::getCurrentDealsCount())
-                    <span class="pull-right-container">
-                      <small class="label pull-right bg-red">{{$dealsCount}}</small>
-                    </span>
-                @endif
-            </a>
-        </li>
+        {{--<li class="{{ Request::is('deals') ? 'active' : '' }}">--}}
+            {{--<a href="{{route('deals')}}"><i class="fa fa-star" aria-hidden="true"></i><span>Promocje</span>--}}
+                {{--@if($dealsCount = \App\Deal::getCurrentDealsCount())--}}
+                    {{--<span class="pull-right-container">--}}
+                      {{--<small class="label pull-right bg-red">{{$dealsCount}}</small>--}}
+                    {{--</span>--}}
+                {{--@endif--}}
+            {{--</a>--}}
+        {{--</li>--}}
 
-        <li class="{{ Request::is('announcements') ? 'active' : '' }}">
-            <a href="{{route('announcements')}}"><i class="fa fa-bullhorn" aria-hidden="true"></i><span>Ogłoszenia</span>
-                @if($announcementsCount = \App\Announcement::getCurrentAnnouncementsCount())
-                    <span class="pull-right-container">
-                      <small class="label pull-right bg-red">{{$announcementsCount}}</small>
-                    </span>
-                @endif
-            </a>
-        </li>
+        {{--<li class="{{ Request::is('announcements') ? 'active' : '' }}">--}}
+            {{--<a href="{{route('announcements')}}"><i class="fa fa-bullhorn" aria-hidden="true"></i><span>Ogłoszenia</span>--}}
+                {{--@if($announcementsCount = \App\Announcement::getCurrentAnnouncementsCount())--}}
+                    {{--<span class="pull-right-container">--}}
+                      {{--<small class="label pull-right bg-red">{{$announcementsCount}}</small>--}}
+                    {{--</span>--}}
+                {{--@endif--}}
+            {{--</a>--}}
+        {{--</li>--}}
 
         <li class="{{ Request::is('contact-form') ? 'active' : '' }}">
             <a href="{{route('contact-form')}}"><i class="fa fa-trophy" aria-hidden="true"></i><span>Zamów nagrodę</span></a>

@@ -9,15 +9,17 @@
 @section('content')
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-saros">
-                    <div class="box-body">
-                        <a href="{{route('import')}}" class="btn btn-sm btn-danger"><i class="fa fa-download" aria-hidden="true" style="margin-right: 5px;"></i><span>Wycofaj import</span></a>
+        @if($user->isAdmin())
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box box-saros">
+                        <div class="box-body">
+                            <a href="{{route('import')}}" class="btn btn-sm btn-danger"><i class="fa fa-download" aria-hidden="true" style="margin-right: 5px;"></i><span>Wycofaj import</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
         <div class="row">
             <div class="col-lg-4">
                 <div class="box box-saros">
