@@ -27,10 +27,12 @@
                                 </div>
                                 <h3>{{$announcement->name}}</h3>
                                 <p>{{$announcement->desc}}</p>
-                                <p>
-                                    <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->start_at)->format('d.m.Y H:i')}}<br>
-                                    <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->end_at)->format('d.m.Y H:i')}}
-                                </p>
+                                @if(auth()->user()->isAdmin())
+                                    <p>
+                                        <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->start_at)->format('d.m.Y H:i')}}<br>
+                                        <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($announcement->end_at)->format('d.m.Y H:i')}}
+                                    </p>
+                                @endif
                                 <div class="item-btns">
                                     <a href="{{route('announcements.edit',$announcement->id)}}">
                                         <button class="btn btn-sm btn-success">

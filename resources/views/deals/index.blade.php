@@ -27,11 +27,12 @@
                             </div>
                             <h3>{{$deal->name}}</h3>
                             <p>{{$deal->desc}}</p>
-                            <p>
-                                <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->start_at)->format('d.m.Y H:i')}}<br>
-                                <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->end_at)->format('d.m.Y H:i')}}
-                            </p>
-
+                            @if(auth()->user()->isAdmin())
+                                <p>
+                                    <strong>Od:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->start_at)->format('d.m.Y H:i')}}<br>
+                                    <strong>Do:</strong> {{\Illuminate\Support\Carbon::createFromTimeString($deal->end_at)->format('d.m.Y H:i')}}
+                                </p>
+                            @endif
                             @if($prefixes = $deal->getPrefixes())
                                 <p>
                                     <strong>Prefiksy objęte promocją:</strong><br>
